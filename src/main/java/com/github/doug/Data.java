@@ -24,8 +24,14 @@ public class Data {
             Iterable<CSVRecord> records = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(csvBodyReader);
             for (CSVRecord record : records) {
                 String county = record.get("county");
+
+            // testing
+
+            System.out.println(county);
+
             }
 
+            
         
     }
 
