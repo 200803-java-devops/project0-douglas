@@ -23,7 +23,7 @@ public class Cases {
         try {
             switch (option) {
                 case 1:
-                    checkcase();
+                    CheckCase checkcase = new CheckCase();
                     break;
                 case 2:
                     rate();

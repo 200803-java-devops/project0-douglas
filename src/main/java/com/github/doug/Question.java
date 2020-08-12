@@ -30,11 +30,11 @@ public class Question {
                         try {
                             Desktop.getDesktop().browse(new URI(
                                     "https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html"));
-                                System.out.println("Thank you for using the program!");
-                                System.out.println("Now directing to the main menu, please wait...");
-                                Cases cases = new Cases();
-                                cases.welcome();
-                                cases.selection();
+                            System.out.println("Thank you for using the program!");
+                            System.out.println("Now directing to the main menu, please wait...");
+                            Cases cases = new Cases();
+                            cases.welcome();
+                            cases.selection();
                         } catch (IOException e) {
                             System.out.println("Browser Error");
                             e.printStackTrace();
@@ -125,22 +125,22 @@ public class Question {
                         Question ques = new Question();
                         ques.question();
                     }
-                    
-                } else if (option ==2) {
+
+                } else if (option == 2) {
                     System.out.println(
-                                "You should not be in immediate danger, please stay safe by continuing social distance, and talk to your doctor if you do not feel well. Would you like to go back to the main menu? \1. Yes \2 2. No");
-                        option = sc.nextInt();
-                        if (option == 1) {
-                            System.out.println("Restarting the main menu, please wait...");
-                            Cases cases = new Cases();
-                            cases.welcome();
-                            cases.selection();
-                        } else {
-                            System.out.println("Restarting the main menu, please wait...");
-                            Cases cases = new Cases();
-                            cases.welcome();
-                            cases.selection();
-                        }
+                            "You should not be in immediate danger, please stay safe by continuing social distance, and talk to your doctor if you do not feel well. Would you like to go back to the main menu? \1. Yes \2 2. No");
+                    option = sc.nextInt();
+                    if (option == 1) {
+                        System.out.println("Restarting the main menu, please wait...");
+                        Cases cases = new Cases();
+                        cases.welcome();
+                        cases.selection();
+                    } else {
+                        System.out.println("Restarting the main menu, please wait...");
+                        Cases cases = new Cases();
+                        cases.welcome();
+                        cases.selection();
+                    }
                 } else {
                     System.out.println("Restarting the selection, please wait...");
                     Question ques = new Question();
@@ -153,8 +153,8 @@ public class Question {
                 cases.selection();
             }
         } else if (option == 2) {
-            System.out.println(
-                    "That's good. Have been in close contact who tested posited for COVID? \n 1:Yes \n 2:No");
+            System.out
+                    .println("That's good. Have been in close contact who tested posited for COVID? \n 1:Yes \n 2:No");
             option = sc.nextInt();
             if (option == 1) {
                 System.out.println(
@@ -228,18 +228,17 @@ public class Question {
                     cases.welcome();
                     cases.selection();
                 }
-            }
-        else {
-            System.out.println("Thank you for using the program!");
-            System.out.println("Now directing to the main menu, please wait...");
-            Cases cases = new Cases();
-            cases.welcome();
-            cases.selection();
+            } else {
+                System.out.println("Thank you for using the program!");
+                System.out.println("Now directing to the main menu, please wait...");
+                Cases cases = new Cases();
+                cases.welcome();
+                cases.selection();
 
-        }    
+            }
+
+        }
 
     }
-
-}
 
 }
