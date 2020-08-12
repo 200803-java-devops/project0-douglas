@@ -12,7 +12,7 @@ public class Cases {
         System.out.println("1. Check Cases at My Location");
         System.out.println("2. Calculate the Possible Explosure Rate at My location");
         System.out.println("3. Report a possible case");
-        System.out.println("4. Find out if I should go to the hospital");
+        System.out.println("4. Find out if I should go to get tested");
 
         option = sc.nextInt();
         
@@ -34,7 +34,8 @@ public class Cases {
                     break;
 
                 case 4:
-                    question();
+                    Question ques = new Question();
+                    ques.question();
                     break;
 
                 default:
@@ -65,16 +66,6 @@ public class Cases {
         
     }
 
-    public void question(){
-        System.out.println("For sure, Let's see if you are in danger of COVID");
-        System.out.println("First, are you feeling sick?");
-        System.out.println("Select 1: Yes or 2:No ");
-        option = sc.nextInt();
-        if (option == 1){
-            System.out.println("Sorrt to hear that, can you let me know if you have 1:Been in Contact or 2:Recently...");
-        } else {
-            System.out.println("That's good...");
-        }
-    }
+
     
 }
