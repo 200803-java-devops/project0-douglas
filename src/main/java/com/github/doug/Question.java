@@ -125,88 +125,26 @@ public class Question {
                         Question ques = new Question();
                         ques.question();
                     }
+                    
+                } else if (option ==2) {
+                    System.out.println(
+                                "You should not be in immediate danger, please stay safe by continuing social distance, and talk to your doctor if you do not feel well. Would you like to go back to the main menu? \1. Yes \2 2. No");
+                        option = sc.nextInt();
+                        if (option == 1) {
+                            System.out.println("Restarting the main menu, please wait...");
+                            Cases cases = new Cases();
+                            cases.welcome();
+                            cases.selection();
+                        } else {
+                            System.out.println("Restarting the main menu, please wait...");
+                            Cases cases = new Cases();
+                            cases.welcome();
+                            cases.selection();
+                        }
                 } else {
                     System.out.println("Restarting the selection, please wait...");
                     Question ques = new Question();
                     ques.question();
-                }
-
-            } else if (option == 2) {
-                System.out.println(
-                        "That's good. Have been in close contact who tested posited for COVID? \n 1:Yes \n 2:No");
-                option = sc.nextInt();
-                if (option == 1) {
-                    System.out.println(
-                            "You might still be in danger, and you should self quarantine for at least 14 days at home.");
-                    System.out.println(
-                            "Would you like to: \n 1. Go back to the main menu \n 2. Check more COVID related resources \3. Leave");
-                    option = sc.nextInt();
-                    if (option == 1) {
-                        System.out.println("Restarting the main menu, please wait...");
-                        Cases cases = new Cases();
-                        cases.welcome();
-                        cases.selection();
-                    } else if (option == 2) {
-                        if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
-                            try {
-                                Desktop.getDesktop().browse(new URI(
-                                        "https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/index.html"));
-                                System.out.println("Thank you for using the program!");
-                                System.out.println("Now directing to the main menu, please wait...");
-                                Cases cases = new Cases();
-                                cases.welcome();
-                                cases.selection();
-                            } catch (IOException e) {
-                                System.out.println("Browser Error");
-                                e.printStackTrace();
-                            } catch (URISyntaxException e) {
-                                System.out.println("Browser Error");
-                                e.printStackTrace();
-                            }
-                        }
-                    } else {
-                        System.out.println("Thank you for using the program");
-                        System.out.println("Now directing to the main menu, please wait...");
-                        Cases cases = new Cases();
-                        cases.welcome();
-                        cases.selection();
-                    }
-                } else if (option == 2) {
-                    System.out.println(
-                            "You should not be in immediate danger, please stay safe by continuing social distance, and talk to your doctor if you do not feel well. Would you like to go back to: \n 1. Go back to Main Menu \n 2. Check Additional Resources \n 3. Close the program ");
-                    option = sc.nextInt();
-                    if (option == 1) {
-                        System.out.println("Restarting the main menu, please wait...");
-                        Cases cases = new Cases();
-                        cases.welcome();
-                        cases.selection();
-                    } else if (option == 2) {
-                        if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
-                            try {
-                                Desktop.getDesktop().browse(new URI(
-                                        "https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/index.html"));
-
-                                System.out.println("Thank you for using the program!");
-                                System.out.println("Now directing to the main menu, please wait...");
-                                Cases cases = new Cases();
-                                cases.welcome();
-                                cases.selection();
-
-                            } catch (IOException e) {
-                                System.out.println("Browser Error");
-                                e.printStackTrace();
-                            } catch (URISyntaxException e) {
-                                System.out.println("Browser Error");
-                                e.printStackTrace();
-                            }
-                        }
-                    } else {
-                        System.out.println("Thank you for using the program!");
-                        System.out.println("Now directing to the main menu, please wait...");
-                        Cases cases = new Cases();
-                        cases.welcome();
-                        cases.selection();
-                    }
                 }
             } else {
                 System.out.println("Restarting the main menu, please wait...");
@@ -214,7 +152,94 @@ public class Question {
                 cases.welcome();
                 cases.selection();
             }
-        }
+        } else if (option == 2) {
+            System.out.println(
+                    "That's good. Have been in close contact who tested posited for COVID? \n 1:Yes \n 2:No");
+            option = sc.nextInt();
+            if (option == 1) {
+                System.out.println(
+                        "You might still be in danger, and you should self quarantine for at least 14 days at home.");
+                System.out.println(
+                        "Would you like to: \n 1. Go back to the main menu \n 2. Check more COVID related resources \3. Leave");
+                option = sc.nextInt();
+                if (option == 1) {
+                    System.out.println("Restarting the main menu, please wait...");
+                    Cases cases = new Cases();
+                    cases.welcome();
+                    cases.selection();
+                } else if (option == 2) {
+                    if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+                        try {
+                            Desktop.getDesktop().browse(new URI(
+                                    "https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/index.html"));
+                            System.out.println("Thank you for using the program!");
+                            System.out.println("Now directing to the main menu, please wait...");
+                            Cases cases = new Cases();
+                            cases.welcome();
+                            cases.selection();
+                        } catch (IOException e) {
+                            System.out.println("Browser Error");
+                            e.printStackTrace();
+                        } catch (URISyntaxException e) {
+                            System.out.println("Browser Error");
+                            e.printStackTrace();
+                        }
+                    }
+                } else {
+                    System.out.println("Thank you for using the program");
+                    System.out.println("Now directing to the main menu, please wait...");
+                    Cases cases = new Cases();
+                    cases.welcome();
+                    cases.selection();
+                }
+            } else if (option == 2) {
+                System.out.println(
+                        "You should not be in immediate danger, please stay safe by continuing social distance, and talk to your doctor if you do not feel well. Would you like to go back to: \n 1. Go back to Main Menu \n 2. Check Additional Resources \n 3. Close the program ");
+                option = sc.nextInt();
+                if (option == 1) {
+                    System.out.println("Restarting the main menu, please wait...");
+                    Cases cases = new Cases();
+                    cases.welcome();
+                    cases.selection();
+                } else if (option == 2) {
+                    if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+                        try {
+                            Desktop.getDesktop().browse(new URI(
+                                    "https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/index.html"));
+
+                            System.out.println("Thank you for using the program!");
+                            System.out.println("Now directing to the main menu, please wait...");
+                            Cases cases = new Cases();
+                            cases.welcome();
+                            cases.selection();
+
+                        } catch (IOException e) {
+                            System.out.println("Browser Error");
+                            e.printStackTrace();
+                        } catch (URISyntaxException e) {
+                            System.out.println("Browser Error");
+                            e.printStackTrace();
+                        }
+                    }
+                } else {
+                    System.out.println("Thank you for using the program!");
+                    System.out.println("Now directing to the main menu, please wait...");
+                    Cases cases = new Cases();
+                    cases.welcome();
+                    cases.selection();
+                }
+            }
+        else {
+            System.out.println("Thank you for using the program!");
+            System.out.println("Now directing to the main menu, please wait...");
+            Cases cases = new Cases();
+            cases.welcome();
+            cases.selection();
+
+        }    
 
     }
+
+}
+
 }
