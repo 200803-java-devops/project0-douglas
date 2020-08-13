@@ -1,4 +1,4 @@
-# welcome to the project Health Checker
+# Welcome to the project Health Checker
 The purpose of the project is to develop a reliable COVID tracking information managment system that also gives you recommendation based on your location. In addition, it will store the exporsure information and generate your rate of exposure and give recommendation based on your input.
 # Gather user information
 - [x] Allow user to input location
@@ -12,6 +12,8 @@ The purpose of the project is to develop a reliable COVID tracking information m
 
 # Gather COVID information
 - [x] Government website - found Times data instead
+- [ ] Merge CSV to local database
+- [ ] Enable server and sql
 - [ ] Mask and Traffic Information
 - [ ] TBD
 

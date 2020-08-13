@@ -1,0 +1,5 @@
+FROM postgres
+ENV POSTGRES_LOCATION database
+ENV POSTGRES_CASES database
+ADD schema.sql /docker-entrypoint-initdb.d
+EXPOSE 5432
