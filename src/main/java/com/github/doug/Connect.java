@@ -13,8 +13,8 @@ public class Connect {
         }
 
         String url = "jdbc:postgresql://5432:5432/data";
-        String username = "dougliu";
-        String password = "password";
+        String username = "douglasliu";
+        String password = "douglasliu";
 
         try {
             Connection connection = DriverManager.getConnection(url, username, password);

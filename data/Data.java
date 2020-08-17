@@ -17,7 +17,7 @@ public class Data {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        String jdbcURL = "jdbc:mysql://localhost:5432";
+        String url = "jdbc:postgresql://5432:5432/covidData";
         String username = "douglasliu";
         String password = "douglasliu";
 
@@ -30,7 +30,7 @@ public class Data {
 
         try {
  
-            connection = DriverManager.getConnection(jdbcURL, username, password);
+            connection = DriverManager.getConnection(url, username, password);
             connection.setAutoCommit(false);
  
             String sql = "INSERT INTO covidData (county, cases, timestamp) VALUES (?, ?)";
@@ -92,9 +92,7 @@ public class Data {
             //     String county = record.get("county");
                 
 
-            // // testing
 
-            // System.out.println(county);
 
             // }
 
