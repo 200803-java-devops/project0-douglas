@@ -12,8 +12,8 @@ The purpose of the project is to develop a reliable COVID tracking information m
 
 # Gather COVID information
 - [x] Government website - found Times data instead
-- [ ] Merge CSV to local database
-- [ ] Enable server and sql
+- [x] Merge CSV to local database
+- [x] Enable server and sql
 - [ ] Mask and Traffic Information
 - [ ] TBD
 

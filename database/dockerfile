@@ -1,6 +1,6 @@
 FROM postgres
 ENV POSTGRES_USER douglasliu
-ENV POSTGRES_PASSWORD douglasliu
-ENV POSTGRES_DB data
+ENV POSTGRES_PASSWORD password
+ENV POSTGRES_DB covidData
 ADD schema.sql /docker-entrypoint-initdb.d
 EXPOSE 5432
