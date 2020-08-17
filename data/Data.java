@@ -16,21 +16,87 @@ import java.io.StringReader;
 public class Data {
 
     public static void main(String[] args) throws IOException, InterruptedException {
+
+        String jdbcURL = "jdbc:mysql://localhost:5432";
+        String username = "douglasliu";
+        String password = "douglasliu";
+
+        String csvFilePath = "NYTDATA"; //NEEDS to figure out how to import data from there and copy to local 
+ 
+        int batchSize = 20;
+ 
+        Connection connection = null;
+
+
+        try {
+ 
+            connection = DriverManager.getConnection(jdbcURL, username, password);
+            connection.setAutoCommit(false);
+ 
+            String sql = "INSERT INTO covidData (county, cases, timestamp) VALUES (?, ?)";
+            PreparedStatement statement = connection.prepareStatement(sql);
+ 
+            BufferedReader lineReader = new BufferedReader(new FileReader(csvFilePath));
+            String lineText = null;
+ 
+            int count = 0;
+ 
+            lineReader.readLine(); 
+ 
+            while ((lineText = lineReader.readLine()) != null) {
+                String[] data = lineText.split(",");
+                String county = data[0];
+                String cases = data[1];
+ 
+                statement.setString(1, county);
+                statement.setString(2, cases);
+ 
+                statement.addBatch();
+ 
+                if (count % batchSize == 0) {
+                    statement.executeBatch();
+                }
+            }
+ 
+            lineReader.close();
+ 
+            statement.executeBatch();
+ 
+            connection.commit();
+            connection.close();
+ 
+        } catch (IOException ex) {
+            System.err.println(ex);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+ 
+            try {
+                connection.rollback();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+
         
-            HttpClient client = HttpClient.newHttpClient();
-            HttpRequest request = HttpRequest.newBuilder().uri(URI.create("https://raw.githubusercontent.com/nytimes/covid-19-data/master/live/us-counties.csv")).build();
-            HttpResponse<String> httpResponse= client.send(request, HttpResponse.BodyHandlers.ofString());
-            StringReader csvBodyReader = new StringReader(httpResponse.body());
-            Iterable<CSVRecord> records = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(csvBodyReader);
-            for (CSVRecord record : records) {
-                String county = record.get("county");
+        // HttpClient client = HttpClient.newHttpClient();
+        // HttpRequest request = HttpRequest.newBuilder().uri(URI.create("https://raw.githubusercontent.com/nytimes/covid-19-data/master/live/us-counties.csv")).build();
+        // HttpResponse<String> httpResponse= client.send(request, HttpResponse.BodyHandlers.ofString());
+        // StringReader csvBodyReader = new StringReader(httpResponse.body());
+        // Iterable<CSVRecord> records = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(csvBodyReader);
+
+
+        
+            // for (CSVRecord record : records) {
+            //     String county = record.get("county");
                 
 
-            // testing
+            // // testing
 
-            System.out.println(county);
+            // System.out.println(county);
 
-            }
+            // }
 
             
         

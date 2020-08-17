@@ -1,6 +1,6 @@
-CREATE TABLE Persons (
-    County varchar(255),
-    Cases int
+CREATE TABLE covidData (
+    county text,
+    cases text
 );
 
 -- a lot of work needs to be completed

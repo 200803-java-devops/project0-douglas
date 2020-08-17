@@ -1,5 +1,6 @@
 FROM postgres
-ENV POSTGRES_LOCATION database
-ENV POSTGRES_CASES database
+ENV POSTGRES_USER douglasliu
+ENV POSTGRES_PASSWORD douglasliu
+ENV POSTGRES_DB data
 ADD schema.sql /docker-entrypoint-initdb.d
 EXPOSE 5432
