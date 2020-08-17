@@ -1,6 +1,7 @@
 CREATE TABLE covidData (
-    county text,
-    cases text
+    county TEXT,
+    cases INT,
+    deaths INT
 );
 
 -- a lot of work needs to be completed
