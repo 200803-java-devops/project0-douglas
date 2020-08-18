@@ -1,6 +1,10 @@
 package com.github.doug;
 import java.util.Scanner;
 
+/**
+ * This method simply asks users for their selection on what they would like to do,
+ * Then, it will go ahead and create an instacne for each function in this program.
+ */
 public class Cases {
 
     Scanner sc = new Scanner(System.in);

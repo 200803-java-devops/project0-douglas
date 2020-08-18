@@ -2,6 +2,11 @@ package com.github.doug;
 
 import com.github.doug.data.GetData;
 
+/**
+ * This class starts the program
+ * the first get Data method will ensure getting the latest data from NYT
+ */
+
 public class App {
 
     public static void main(String[] args) {

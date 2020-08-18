@@ -4,9 +4,10 @@ import com.github.doug.data.Connect;
 import java.util.Scanner;
 import java.sql.*;
 
-
-
-
+/**
+ * This method uses the case to death ration from each county to calculate if a user is likely to fatalty rate of the infection
+ * The program will then generate a set of recommendations based of the specific fatality rate
+ */
 
 public class Exposure {
 

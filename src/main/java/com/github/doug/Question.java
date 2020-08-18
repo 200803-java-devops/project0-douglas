@@ -6,6 +6,10 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Scanner;
 
+/**
+ * This is more like a "chatbot" to help users gather and identify the information needed according to their stuation
+ * Once valid data is gathered, it will generate a set of recommendations, including opening additional resources on the website.
+ */
 public class Question {
     Scanner sc = new Scanner(System.in);
     static int option;

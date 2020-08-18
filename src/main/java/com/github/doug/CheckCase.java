@@ -6,6 +6,11 @@ import com.github.doug.data.Connect;
 
 import java.sql.*;
 
+/**
+ * This class helps with identifying and selecting the specific data from the covid Data database sql, it contains two method
+ * Checkcase: it will obtain data for the specific location by using the county name to ID
+ * sample data: it will show a sample of the data from sql to help user undersand the data was up to date
+ */
 public class CheckCase {
     Scanner sc = new Scanner(System.in);
 
@@ -31,10 +36,10 @@ public class CheckCase {
             }
 
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
+            System.err.println("Location not Found");
             e.printStackTrace();
         } catch (Exception e) {
-            // TODO Auto-generated catch block
+            System.err.println("Input not recongized");
             e.printStackTrace();
         }
 
