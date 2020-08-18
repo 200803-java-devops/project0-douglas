@@ -11,10 +11,9 @@ public class Cases {
         System.out.println("Hello there! Please select by typing what you would like to do \n " );
         System.out.println("1. Check Cases at My Location");
         System.out.println("2. Calculate the Possible Explosure Rate at My location");
-        System.out.println("3. Report a possible case");
+        System.out.println("3. See a sample of the data retrived from server");
         System.out.println("4. Find out if I should go to get tested");
-        System.out.println("5. See a sample of the data retrived from server");
-
+        
 
         option = sc.nextInt();
         
@@ -29,11 +28,8 @@ public class Cases {
                     check.checkCase();
                     break;
                 case 2:
-                    //rate();
-                    break;
-
-                case 3:
-                    //report();
+                    Exposure expo = new Exposure();
+                    expo.checkExposure();
                     break;
 
                 case 4:
@@ -41,7 +37,7 @@ public class Cases {
                     ques.question();
                     break;
 
-                case 5:
+                case 3:
                 CheckCase listall = new CheckCase();
                 listall.listSample();
                 break;

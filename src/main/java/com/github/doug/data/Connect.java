@@ -7,14 +7,10 @@ public class Connect {
 
 
     public static Connection connect() throws Exception{
-        try{
             
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:1111/covidData", "douglasliu", "password");
+        return DriverManager.getConnection("jdbc:postgresql://localhost:2345/covidData", "douglasliu", "password");
             
-            return conn;
-        } catch(Exception e){System.out.println(e);}
-        
-        return null;
+
     }
 
 }
