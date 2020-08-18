@@ -13,6 +13,8 @@ public class Cases {
         System.out.println("2. Calculate the Possible Explosure Rate at My location");
         System.out.println("3. Report a possible case");
         System.out.println("4. Find out if I should go to get tested");
+        System.out.println("5. See a sample of the data retrived from server");
+
 
         option = sc.nextInt();
         
@@ -23,20 +25,26 @@ public class Cases {
         try {
             switch (option) {
                 case 1:
-                    CheckCase checkcase = new CheckCase();
+                    CheckCase check = new CheckCase();
+                    check.checkCase();
                     break;
                 case 2:
-                    rate();
+                    //rate();
                     break;
 
                 case 3:
-                    report();
+                    //report();
                     break;
 
                 case 4:
                     Question ques = new Question();
                     ques.question();
                     break;
+
+                case 5:
+                CheckCase listall = new CheckCase();
+                listall.listSample();
+                break;
 
                 default:
                 System.out.println("Please choose a valid selection by typing: 1, 2, 3, 4. ");
@@ -48,23 +56,6 @@ public class Cases {
     } 
 
 
-    public static int choice() {
-        return option;
-    }
-
-    public void checkcase(){
-        System.out.println("For sure, please type in your zip code:");
-        option = sc.nextInt();
-        System.out.println("Your zip code is " + option + ".");
-    }
-
-    public void rate(){
-        //tbd added with data.java
-    }
-
-    public void report(){
-        
-    }
 
 
     

@@ -30,9 +30,7 @@ public class GetData {
 
     public static void getData() throws Exception {
 
-        //Connection con = connect();
-        Connection con = null;
-        con = DriverManager.getConnection("jdbc:postgresql://localhost:1111/covidData", "douglasliu", "password");
+        Connection con = Connect.connect();
         con.setAutoCommit(false);
 
         String sql = "INSERT INTO covidData (county, cases, deaths) VALUES (?, ?, ?)";

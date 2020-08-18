@@ -19,3 +19,9 @@ The purpose of the project is to develop a reliable COVID tracking information m
 
 # Setup HTTP server with responses
 - [ ] TBD
+
+
+# To Run
+docker build -t demo-postgres .
+docker run -p 2345:5432 -d demo-postgres
+
