@@ -3,18 +3,22 @@ package com.github.doug.data;
 import java.io.*;
 import java.net.URL;
 import java.sql.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
- * This class is used to get the latest covid data from the New York Times github
- * It then will simplify the data by only getting the county, cases, and death information
- * Those data will then be added to the covidData SQL for further uses.
+ * This class is used to get the latest covid data from the New York Times
+ * github It then will simplify the data by only getting the county, cases, and
+ * death information Those data will then be added to the covidData SQL for
+ * further uses.
  */
 
 public class GetData {
 
-
+    private static Log log = LogFactory.getLog(GetData.class);
 
     public static void getData() throws Exception {
+        log.info("Data imported successfully");
 
         Connection con = Connect.connect();
         con.setAutoCommit(false);
@@ -42,7 +46,7 @@ public class GetData {
                 int cases = 0;
                 statement.setInt(2, cases);
             }
-            //int cases = Integer.parseInt(data[4]);
+            // int cases = Integer.parseInt(data[4]);
 
             try {
                 int deaths = Integer.parseInt(data[5]);
@@ -51,11 +55,10 @@ public class GetData {
                 int deaths = 0;
                 statement.setInt(3, deaths);
             }
-            //int deaths = Integer.parseInt(data[5]);
+            // int deaths = Integer.parseInt(data[5]);
 
-            
-            //statement.setInt(2, cases);
-            //statement.setInt(3, deaths);
+            // statement.setInt(2, cases);
+            // statement.setInt(3, deaths);
             statement.addBatch();
         }
 
@@ -64,7 +67,7 @@ public class GetData {
         reader.close();
         con.commit();
         con.close();
-        
+
     }
 
 }

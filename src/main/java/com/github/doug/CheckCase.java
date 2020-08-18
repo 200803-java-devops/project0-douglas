@@ -1,21 +1,22 @@
 package com.github.doug;
 
-import java.util.Scanner;
-
 import com.github.doug.data.Connect;
 
+import java.util.Scanner;
 import java.sql.*;
 
 /**
- * This class helps with identifying and selecting the specific data from the covid Data database sql, it contains two method
- * Checkcase: it will obtain data for the specific location by using the county name to ID
- * sample data: it will show a sample of the data from sql to help user undersand the data was up to date
+ * This class helps with identifying and selecting the specific data from the
+ * covid Data database sql, it contains two method Checkcase: it will obtain
+ * data for the specific location by using the county name to ID sample data: it
+ * will show a sample of the data from sql to help user undersand the data was
+ * up to date
  */
 public class CheckCase {
     Scanner sc = new Scanner(System.in);
 
     public void checkCase() {
-        System.out.println("For sure, please type in the name of your county:");
+        System.out.println("\nFor sure, please type in the name of your county:");
         String county = sc.next();
         System.out.println("\n Your county is " + county + ", are here are the current status");
 
@@ -44,7 +45,7 @@ public class CheckCase {
         }
 
         System.out.println("\n Thank you for using the case checker");
-        System.out.println("Would you like to go back to the main menu?  1. Yes  2. No \n");
+        System.out.println("\nWould you like to go back to the main menu?  1. Yes  2. No \n");
         int option = sc.nextInt();
 
         if (option == 2) {
@@ -77,7 +78,7 @@ public class CheckCase {
 
             System.out.println("Sample records have been displayed!");
         } catch (Exception e) {
-            // TODO Auto-generated catch block
+            System.err.println("Not able to list items");
             e.printStackTrace();
         }
 

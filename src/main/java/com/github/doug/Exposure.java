@@ -1,22 +1,24 @@
 package com.github.doug;
+
 import com.github.doug.data.Connect;
 
 import java.util.Scanner;
 import java.sql.*;
 
 /**
- * This method uses the case to death ration from each county to calculate if a user is likely to fatalty rate of the infection
- * The program will then generate a set of recommendations based of the specific fatality rate
+ * This method uses the case to death ration from each county to calculate if a
+ * user is likely to fatalty rate of the infection The program will then
+ * generate a set of recommendations based of the specific fatality rate
  */
 
 public class Exposure {
 
     public void checkExposure() {
         double rate = 0;
-        System.out.println("For sure, to calculate the rates, please type in the name of your county:");
+        System.out.println("\nFor sure, to calculate the rates, please type in the name of your county:");
         Scanner sc = new Scanner(System.in);
         String county = sc.next();
-        System.out.println("Your county is " + county + ", are here are the current status");
+        System.out.println("\nYour county is " + county + ", are here are the current status");
 
         try {
 
@@ -32,14 +34,14 @@ public class Exposure {
             }
 
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
+            System.err.println("Not able to use SQL");
             e.printStackTrace();
         } catch (Exception e) {
-            // TODO Auto-generated catch block
+            System.err.println("failed to work");
             e.printStackTrace();
         }
 
-        System.out.println(" \n The fatility rate for your location is " + rate + " , which this means that: ");
+        System.out.println(" \nThe fatility rate for your location is " + rate + " , which this means that: \n");
 
         if (rate > 0.1) {
             System.out.println(
