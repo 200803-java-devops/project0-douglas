@@ -13,22 +13,20 @@ public class CheckCase {
         Scanner sc = new Scanner(System.in);
         String county = sc.next();
         sc.close();
-        System.out.println("Your county is " + county + ", are there are here are the current cases:");
+        System.out.println("Your county is " + county + ", are there are here is the number of the current cases:");
 
         try {
 
             Connection con = Connect.connect();
 
-            PreparedStatement statement = con.prepareStatement("SELECT cases FROM covidData where county = " + county);
+            PreparedStatement statement = con.prepareStatement("SELECT * FROM covidData WHERE county = " + "'" + county + "'");
 
-            ResultSet result;
+            ResultSet result = statement.executeQuery();
 
-            result = statement.executeQuery();
+            while(result.next()){
+                System.out.println(result.getInt("cases"));
+            }  
 
-            while (result.next()) {
-                int num = result.getInt("cases");
-                System.out.print(num);
-            }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -55,11 +53,12 @@ public class CheckCase {
         
         ResultSet result = statement.executeQuery();
         
-
         while(result.next()){
             System.out.print(result.getString("county"));
             System.out.print(" ");
-            System.out.println(result.getString("cases"));  
+            System.out.println(result.getString("cases"));
+            System.out.print(" ");
+            System.out.println(result.getString("deaths"));
         }
 
         System.out.println("Sample records have been displayed!");
